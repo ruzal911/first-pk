@@ -38,5 +38,6 @@ void main()
 	cin >> m;
 	if (m == 1)
 		goto bc;
+	cout << "dfsd";
 	
 }

@@ -1,20 +1,21 @@
 ﻿#include <iostream>
 using namespace std;
 
-class Human
+void F(int *B,int b)
 {
-public:
-
-	int age;
-	string name;
-};
+	for (int i = 0; i < b; i++)
+	{
+		cout << B[i] << endl;
+	}
+}
 int main()
 {
-	Human Firstname;
-	Firstname.age = 5;
-	Firstname.name = "Ruzal";
-	cout << Firstname.name << endl;
-	cout << Firstname.age << endl;
-
-	return 0;
+	setlocale(LC_ALL, "RUS");
+	string abc;
+	abc = "првиет";
+	cout << abc << endl;
+	int a[] = {7,8,5,1,3,6,4,5,5,9};
+	int b = sizeof(a) / 4;
+	F(a,b);
+	
 }

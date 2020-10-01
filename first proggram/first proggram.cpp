@@ -2,42 +2,43 @@
 #include <ctime>
 using namespace std;
 
+
 void main()
 {
 	int const size = 10;
 	setlocale(LC_ALL, "RUS");
 	srand(time(NULL));
-	int a[size];
-	bool c;int b;
-	bc:
-	for (int i = 0; i < size;)
+	int s ,a;
+	char x;
+a:
+	cout << "*****************НАЧНЕМ ИГРУ В 21*****************"<< endl;
+	s = 0;
+	while (s<=21)
 	{
-		c = false;b = rand() % 20;
-		for (int j = 0; j < i; j++)
+		cout << "Ваша сумма равна: " << s << endl;
+		cout << "Взять еще? y/n "<< endl;
+		cin >> x;
+		if (x == 'y')
 		{
-			if (a[j] == b)
-			{
-				c = true;
-				break;
-			}
+			a = rand() % 10 + 1;
+			cout << "Вам попалась карта номиналом " << a << endl;
+			s += a;
 		}
-
-		if (c == false)
-		{
-			a[i] = b;
-			i++;
-		}
+		else
+			if (x == 'n')
+				goto a;
+			else
+				system("pause");
 	}
-	for (int i = 0; i < size; i++)
-	{
-		cout << a[i] << endl;
-
-	}
-	cout << "Введите 1 если хотите продолжить или 0 если хотите завершить " << endl;
-	int m;
-	cin >> m;
-	if (m == 1)
-		goto bc;
-	cout << "dfsd";
-	
+	if (s == 21)
+		cout << "ПОЗДРОВЛЯЮ ВЫ ВЫЙГРАЛИ!!!!!!"<<endl;
+	if (s > 21)
+		cout << "Вы проиграли ваша сумма очков равна " << s << endl;
+	cout << "Начать заново y/n" << endl;
+	char t;
+	cin >> t;
+	if (t == 'y')
+		goto a;
+	else
+		system("pause");
 }
